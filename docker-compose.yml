@@ -1,7 +1,11 @@
 version: '3'
 services:
   php-apache:
-    image: teste-php
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: img-teste-php5.6
+    container_name: ctn-teste-php5.6
     ports:
       - "8080:80" # Mapeie a porta 8080 do host para a porta 80 do container
     volumes:
